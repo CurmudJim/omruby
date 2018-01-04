@@ -1,0 +1,30 @@
+<div class="container">
+
+  <table class="table table-striped table-bordered table-dark ">
+    <thead>
+      <tr>
+        <th>Beers</th>
+        <th>ABV</th>
+        <th>Style</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @beers.each do |beer| %>
+        <tr>
+          <td><%= link_to beer.name, beer %></td>
+          <% if beer.abv == 0 %>
+            <td>NA</td>
+          <% else %>
+            <td><%= beer.abv %>%</td>
+          <% end %>
+          <td><%= beer.style %></td>
+          <td>$<%= "%0.02f" % beer.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>
