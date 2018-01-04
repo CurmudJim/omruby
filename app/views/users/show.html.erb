@@ -1,13 +1,12 @@
+
+<p></p>
 <div class="row">
   <div class="col-4">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title"><%= link_to current_user.username, user_path(current_user.username) %></h5>
-        <p class="card-text"><%= current_user.name %></p>
+        <h5 class="card-title"><%= @user.username %></h5>
+        <p class="card-text"><%= @user.name %></p>
       </div>
-      <% if user_signed_in? %>
-      <%= link_to "New Tweet", new_tweet_path, class:"card-footer btn" %>
-      <% end %>
     </div>
   </div>
   <div class="col-8">
