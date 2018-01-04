@@ -10,8 +10,11 @@
 
 <body>
 
+
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+
 
 
       <%= link_to "Home", root_path, class:"navbar-brand" %>
@@ -52,27 +55,25 @@
     </div>
   </nav>
 
-
   <!-- Flash Messages -->
   <% flash.each do |name, message| %>
   <%= content_tag(:div, message, class: "alert alert-info #{name}")%>
   <% end %>
 
-  <%= yield %>
+  <main class="container">
 
+    <%= yield %>
+
+  </main>
   <!-- Footer -->
   <!-- <div class="container"> -->
-  <footer class="small text-muted">
-    <div class="container">
+  <footer class="small text-muted container">
       <hr>
       <center>
         <p>© 2016 One Month</p>
       </center>
-    </div>
   </footer>
   <!-- </div> -->
-
-
 
   <script type="text/javascript">
   $(function () {
