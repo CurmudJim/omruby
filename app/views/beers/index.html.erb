@@ -1,4 +1,3 @@
-<!-- <div class="container"> -->
 
   <table class="table table-striped table-bordered table-dark ">
     <thead>
@@ -6,7 +5,11 @@
         <th>Beers</th>
         <th>ABV</th>
         <th>Style</th>
-        <th>Price</th>
+        <th>5 oz</th>
+        <th>10 oz</th>
+        <th>16 oz</th>
+        <th>32 oz</th>
+        <th>64 oz</th>
       </tr>
     </thead>
 
@@ -20,10 +23,12 @@
             <td><%= beer.abv %>%</td>
           <% end %>
           <td><%= beer.style %></td>
-          <td>$<%= "%0.02f" % beer.price %></td>
+          <td>$<%= beer.oz5 %></td>
+          <td>$<%= beer.oz10 %></td>
+          <td>$<%= beer.oz16 %></td>
+          <td>$<%= beer.oz32 %></td>
+          <td>$<%= beer.oz64 %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-
-<!-- </div> -->

@@ -1,4 +1,4 @@
 class Beer < ApplicationRecord
 
-  validates :name, :abv, :style, :price, presence: true
+  validates :name, :abv, :style, presence: true
 end

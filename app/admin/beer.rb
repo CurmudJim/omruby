@@ -2,7 +2,7 @@ ActiveAdmin.register Beer do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :name, :abv, :style, :price
+permit_params :name, :abv, :style, :oz5, :oz10, :oz16, :oz32, :oz64
 #
 # or
 #
