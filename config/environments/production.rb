@@ -3,10 +3,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('jimrails'),
-    access_key_id: ENV.fetch('AKIAJRUMV5WCDNDDDZNA'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-east-2'),
+    bucket: ENV.fetch('S3_BUCKET_NAME'),
+    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+    s3_region: ENV.fetch('AWS_REGION'),
   }
 }
   # Settings specified here will take precedence over those in config/application.rb.
