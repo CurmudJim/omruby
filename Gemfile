@@ -18,6 +18,7 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 gem 'activeadmin'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
+gem 'acts_as_votable', '~> 0.11.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -2,6 +2,7 @@
 <table class="table table-striped table-bordered table-dark ">
   <thead>
     <tr>
+
       <th>Beers</th>
       <th>ABV</th>
       <th>Style</th>
@@ -10,33 +11,41 @@
       <th>16 oz</th>
       <th>32 oz</th>
       <th>64 oz</th>
+      <th>Likes</th>
+      <% if user_signed_in? %>
+        <th>Vote</th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% @beers.each do |beer| %>
-
-
       <tr>
-      
-
-          <td><%= beer.name %></td>
-          <% if beer.abv == 0 %>
-          <td>NA</td>
-          <% else %>
-          <td><%= beer.abv %>%</td>
+        <td><%= beer.name %></td>
+        <% if beer.abv == 0 %>
+        <td>NA</td>
+        <% else %>
+        <td><%= beer.abv %>%</td>
+        <% end %>
+        <td><%= beer.style %></td>
+        <td>$<%= beer.oz5 %></td>
+        <td>$<%= beer.oz10 %></td>
+        <td>$<%= beer.oz16 %></td>
+        <td>$<%= beer.oz32 %></td>
+        <td>$<%= beer.oz64 %></td>
+        <td>
+          <%= beer.votes_for.up.size %>
+        </td>
+        <td>
+          <% if user_signed_in? %>
+            <% if current_user.voted_up_on? beer %>
+              <%= link_to 'Unlike', unvote_beer_path(beer), method: :delete, class: 'btn btn-danger' %>
+            <% else %>
+              <%= link_to 'Like', vote_beer_path(beer), method: :post, class: 'btn btn-success' %>
+            <% end %>
           <% end %>
-          <td><%= beer.style %></td>
-          <td>$<%= beer.oz5 %></td>
-          <td>$<%= beer.oz10 %></td>
-          <td>$<%= beer.oz16 %></td>
-          <td>$<%= beer.oz32 %></td>
-          <td>$<%= beer.oz64 %></td>
-
-
+        </td>
       </tr>
-
-
 
     <% end %>
   </tbody>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   ActiveAdmin.routes(self)
   devise_for :users
   as :user do
@@ -18,7 +18,12 @@ Rails.application.routes.draw do
     end
 
 
-  resources :beers
+  resources :beers do
+    member do
+      post 'vote', to: 'votes#create'
+      delete 'unvote', to: 'votes#destroy'
+    end
+  end
   resources :tweets
 
 
