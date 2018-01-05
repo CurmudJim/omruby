@@ -12,12 +12,12 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 gem 'activeadmin'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 
 group :development, :test do
   gem 'byebug', platform: :mri
