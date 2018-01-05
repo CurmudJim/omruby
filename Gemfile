@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 gem 'acts_as_votable', '~> 0.11.1'
+gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri

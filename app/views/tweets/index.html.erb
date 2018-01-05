@@ -24,6 +24,9 @@
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><%= tweet.user.username %></h5>
           </div>
+          <% if tweet.image.present? %>
+            <center><%= image_tag tweet.image %></center>
+          <% end %>
           <p class="mb-1"><%= tweet.content %></p>
         <% end %>
       <% end %>
