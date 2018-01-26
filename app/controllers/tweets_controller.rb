@@ -44,7 +44,6 @@ class TweetsController < ApplicationController
   end
 
   # DELETE /tweets/1
-  # DELETE /tweets/1.json
   def destroy
     @tweet = current_user.tweets.find(params[:id])
 

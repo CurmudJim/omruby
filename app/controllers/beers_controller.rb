@@ -2,14 +2,11 @@ class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
 
   # GET /beers
-  # GET /beers.json
-
   def index
     @beers = Beer.all
   end
 
   # GET /beers/1
-  # GET /beers/1.json
   def show
   end
 
@@ -23,43 +20,31 @@ class BeersController < ApplicationController
   end
 
   # POST /beers
-  # POST /beers.json
   def create
     @beer = Beer.new(beer_params)
 
-    respond_to do |format|
+
       if @beer.save
-        format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
-        format.json { render :show, status: :created, location: @beer }
+        redirect_to @beer, notice: 'Beer was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @beer.errors, status: :unprocessable_entity }
-      end
+        render :new
     end
   end
 
   # PATCH/PUT /beers/1
-  # PATCH/PUT /beers/1.json
   def update
-    respond_to do |format|
+
       if @beer.update(beer_params)
-        format.html { redirect_to @beer, notice: 'Beer was successfully updated.' }
-        format.json { render :show, status: :ok, location: @beer }
+        redirect_to @beer, notice: 'Beer was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @beer.errors, status: :unprocessable_entity }
-      end
+        ender :edit
     end
   end
 
   # DELETE /beers/1
-  # DELETE /beers/1.json
   def destroy
     @beer.destroy
-    respond_to do |format|
-      format.html { redirect_to beers_url, notice: 'Beer was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to beers_url, notice: 'Beer was successfully destroyed.'
   end
 
   private

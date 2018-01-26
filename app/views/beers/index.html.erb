@@ -28,11 +28,11 @@
         <td><%= beer.abv %>%</td>
         <% end %>
         <td><%= beer.style %></td>
-        <td>$<%= beer.oz5 %></td>
-        <td>$<%= beer.oz10 %></td>
-        <td>$<%= beer.oz16 %></td>
-        <td>$<%= beer.oz32 %></td>
-        <td>$<%= beer.oz64 %></td>
+        <td><%= number_to_currency beer.oz5 %></td>
+        <td><%= number_to_currency beer.oz10 %></td>
+        <td><%= number_to_currency beer.oz16 %></td>
+        <td><%= number_to_currency beer.oz32 %></td>
+        <td><%= number_to_currency beer.oz64 %></td>
         <td>
           <%= beer.votes_for.up.size %>
         </td>

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :movies do
+    member do
+      post 'watched', to: 'watches#create'
+      delete 'unwatched', to: 'unwatches#destroy'
+    end
+  end
+  resources :nominations
+  resources :recipes
   ActiveAdmin.routes(self)
   devise_for :users
   as :user do

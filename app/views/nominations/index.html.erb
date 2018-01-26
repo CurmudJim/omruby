@@ -1,0 +1,9 @@
+<h1>Nomination</h1>
+
+<ul id="nominations">
+  <% @nominations.each do |nomination| %>
+    <li>
+      <%= link_to nomination.name, nomination_path(nomination) %>
+    </li>
+  <% end %>
+</ul>

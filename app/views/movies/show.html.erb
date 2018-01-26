@@ -1,0 +1,13 @@
+<h1><%= @movie.title %></h1>
+<%= link_to "Back to movie list", movies_path %>
+
+<p>
+  Nominations:
+</p>
+<ul>
+  <% @nominations.each do |nomination| %>
+    <li>
+      <%= link_to nomination.name, nomination_path(nomination) %>
+    </li>
+  <% end %>
+</ul>

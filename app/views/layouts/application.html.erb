@@ -27,6 +27,18 @@
           <li class="nav-item">
             <%= link_to "Beers", beers_path, class:"nav-link"  %>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Oscars
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a><%= link_to "Movies", movies_path, class:"dropdown-item"  %></a>
+              <%= link_to "Nominations", nominations_path, class:"dropdown-item"  %>
+            </div>
+          </li>
+          <li class="nav-item">
+
+          </li>
           <li class="nav-item">
             <%= link_to "Tweets", tweets_path, class:"nav-link"  %>
           </li>
