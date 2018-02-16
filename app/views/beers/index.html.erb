@@ -39,9 +39,13 @@
         <td>
           <% if user_signed_in? %>
             <% if current_user.voted_up_on? beer %>
-              <%= link_to 'Unlike', unvote_beer_path(beer), method: :delete, class: 'btn btn-danger' %>
+              <%= link_to unvote_beer_path(beer), method: :delete do %>
+                <i class= 'fa fa-thumbs-up vote'></i>
+              <% end %>
             <% else %>
-              <%= link_to 'Like', vote_beer_path(beer), method: :post, class: 'btn btn-success' %>
+              <%= link_to vote_beer_path(beer), method: :post do %>
+                <i class= 'fa fa-thumbs-up unvote'></i>
+              <% end %>
             <% end %>
           <% end %>
         </td>

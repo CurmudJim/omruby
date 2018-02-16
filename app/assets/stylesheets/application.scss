@@ -1,8 +1,23 @@
 @import "bootstrap";
 @import "pages";
 @import "signin_and_signup";
-
+@import "font-awesome";
 
 main {
   padding: 1rem 0;
+}
+
+td,th {
+  text-align: center;
+}
+
+
+
+
+.unvote {
+  color: rgba(225,100,100,.25)
+}
+
+.vote {
+  color: rgba(100,100,225,1)
 }

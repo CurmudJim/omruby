@@ -3,7 +3,6 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all.order('title ASC')
-    # @nominations = @movie.nominations.order('name ASC')
   end
 
   def show
@@ -22,4 +21,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def nomination_list
+    nominations.join(", ")
+  end
 end

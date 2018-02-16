@@ -6,29 +6,37 @@
       <th>Title</th>
       <th>Nominations</th>
       <% if user_signed_in? %>
-        <th>Watched</th>
+        <th>
+          Watched (<%= (current_user.get_up_voted Movie).length %>)
+        </th>
       <% end %>
     </tr>
   </thead>
   <tbody>
     <% @movies.each do |movie| %>
-      <tr>
-        <td>
-          <%= link_to movie.title, movie_path(movie) %>
-        </td>
-        <td>
-          <%= movie.nominations.length %>
-        </td>
-        <% if user_signed_in? %>
-          <td>
-            <% if !current_user.voted_up_on? movie %>
-            <%= link_to 'Watched', watched_movie_path(movie), method: :post, class: 'btn btn-success', data: { confirm: 'Are you sure?' } %>
-            <% else %>
-            Watched
+    <tr>
+      <td>
+        <%= link_to movie.title, movie_path(movie) %>
+      </td>
+      <td>
+        <%= movie.nominations.length %>
+      </td>
+      <% if user_signed_in? %>
+      <td>
+        <% if !current_user.voted_up_on? movie %>
+          <%= link_to watched_movie_path(movie), method: :post do %>
+            <i class= 'fa fa-eye unvote'></i>
           <% end %>
-        </td>
+        <% else %>
+          <%= link_to unwatched_movie_path(movie), method: :delete do %>
+            <i class= 'fa fa-eye vote'></i>
+          <% end %>
         <% end %>
-      </tr>
-              <% end %>
+
+
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
   </tbody>
 </table>

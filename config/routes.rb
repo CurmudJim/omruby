@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :movies do
-    member do
-      post 'watched', to: 'watches#create'
-      delete 'unwatched', to: 'unwatches#destroy'
-    end
-  end
-  resources :nominations
+
   resources :recipes
   ActiveAdmin.routes(self)
   devise_for :users
@@ -22,8 +16,8 @@ Rails.application.routes.draw do
     member do
       post 'follow', to: 'follows#create'
       delete 'unfollow', to: 'follows#destroy'
-      end
     end
+  end
 
 
   resources :beers do
@@ -33,6 +27,14 @@ Rails.application.routes.draw do
     end
   end
   resources :tweets
+
+  resources :movies do
+    member do
+      post 'watched', to: 'watches#create'
+      delete 'unwatched', to: 'watches#destroy'
+    end
+  end
+  resources :nominations
 
 
   get 'pages/home'

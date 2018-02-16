@@ -53,8 +53,9 @@ ActiveRecord::Schema.define(version: 20180125172313) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "nomination_list"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "nominatings", force: :cascade do |t|
