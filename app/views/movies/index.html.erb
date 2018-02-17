@@ -32,7 +32,7 @@
         <td>
           <% if !current_user.voted_up_on? movie %>
             <%= link_to watched_movie_path(movie), method: :post do %>
-              <i class= 'fa fa-eye unvote'></i>
+              <i class= 'fa fa-eye-slash unvote'></i>
             <% end %>
           <% else %>
             <%= link_to unwatched_movie_path(movie), method: :delete do %>
