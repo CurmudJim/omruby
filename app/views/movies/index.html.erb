@@ -1,51 +1,89 @@
 <!-- <h1>Movies</h1> -->
 <% if !user_signed_in? %>
-  <div class="jumbotron text-center">
-    <h2>Sign in to keep track.</h2>
-    <%= link_to "Sign in", signin_path, class:"btn btn-lg btn-dark"  %>
-    <%= link_to "Sign up", signup_path, class:"btn btn-lg btn-light"  %>
-  </div>
+<div class="jumbotron text-center">
+  <h2>Sign in to keep track.</h2>
+  <%= link_to "Sign in", signin_path, class:"btn btn-lg btn-dark"  %>
+  <%= link_to "Sign up", signup_path, class:"btn btn-lg btn-light"  %>
+</div>
 <% end %>
-<div class="table-responsive-sm">
-  <table class="table table-striped table-bordered table-dark">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Nominations</th>
-        <% if user_signed_in? %>
+<div class="row">
+  <div class="col-8">
+    <table class="table table-striped table-bordered table-dark">
+      <thead>
+        <tr>
+          <th colspan="3">Oscars</th>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Nominations</th>
+          <% if user_signed_in? %>
           <th>
             Watched (<%= (current_user.get_up_voted Movie).length %>)
           </th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody>
-      <% @movies.each do |movie| %>
-      <tr>
-        <td>
-          <%= link_to movie.title, movie_path(movie) %>
-        </td>
-        <td>
-          <%= movie.nominations.length %>
-        </td>
-        <% if user_signed_in? %>
-        <td>
-          <% if !current_user.voted_up_on? movie %>
-            <%= link_to watched_movie_path(movie), method: :post, id: movie.title do %>
-              <i class= 'fa fa-eye-slash unvote'></i>
-            <% end %>
-          <% else %>
-            <%= link_to unwatched_movie_path(movie), method: :delete, id: movie.title do %>
-              <i class= 'fa fa-eye vote'></i>
-            <% end %>
           <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @movies.each do |movie| %>
+        <tr>
+          <td>
+            <%= link_to movie.title, movie_path(movie) %>
+          </td>
+          <td>
+            <%= movie.nominations.length %>
+          </td>
+          <% if user_signed_in? %>
+          <td>
+            <% if !current_user.voted_up_on? movie %>
+            <%= link_to watched_movie_path(movie), method: :post, id: movie.title do %>
+            <i class= 'fa fa-eye-slash unvote'></i>
+            <% end %>
+            <% else %>
+            <%= link_to unwatched_movie_path(movie), method: :delete, id: movie.title do %>
+            <i class= 'fa fa-eye vote'></i>
+            <% end %>
+            <% end %>
 
 
-        </td>
+          </td>
+          <% end %>
+        </tr>
         <% end %>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-4">
+    <table class="table table-striped table-bordered table-dark">
+      <thead>
+        <tr>
+          <th colspan="2">Leaderboard</th>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Watch Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to user.name, user_path(user.username) %>
+          </td>
+          <td>
+            <%= (user.get_up_voted Movie).length %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
 </div>
-</table>
