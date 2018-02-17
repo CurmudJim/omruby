@@ -23,7 +23,7 @@
       <% @movies.each do |movie| %>
       <tr>
         <td>
-          <%= link_to movie.title, movie_path(movie), id: movie.title %>
+          <%= link_to movie.title, movie_path(movie) %>
         </td>
         <td>
           <%= movie.nominations.length %>
@@ -31,11 +31,11 @@
         <% if user_signed_in? %>
         <td>
           <% if !current_user.voted_up_on? movie %>
-            <%= link_to watched_movie_path(movie), method: :post do %>
+            <%= link_to watched_movie_path(movie), method: :post, id: movie.title do %>
               <i class= 'fa fa-eye-slash unvote'></i>
             <% end %>
           <% else %>
-            <%= link_to unwatched_movie_path(movie), method: :delete do %>
+            <%= link_to unwatched_movie_path(movie), method: :delete, id: movie.title do %>
               <i class= 'fa fa-eye vote'></i>
             <% end %>
           <% end %>
