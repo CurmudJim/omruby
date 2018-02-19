@@ -22,6 +22,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
 gem "font-awesome-rails"
+gem 'themoviedb'
 
 group :development, :test do
   gem 'byebug', platform: :mri

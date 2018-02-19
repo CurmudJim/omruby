@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all.order('title ASC')
-    @users = User.all
+    @users = User.all.order('name ASC')
   end
 
   def show

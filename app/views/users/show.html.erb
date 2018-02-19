@@ -2,7 +2,7 @@
 <p></p>
 <div class="row">
   <div class="col-4">
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <div class="card-body">
         <h5 class="card-title"><%= @user.username %></h5>
         <p class="card-text"><%= @user.name %></p>
@@ -15,7 +15,23 @@
         <% end %>
       <% end %>
     </div>
+    <div id="oscarWatch" class="card">
+      <div class="card-header">
+        <h5 class="card-title">Oscar Watch</h5>
+      </div>
+      <div class="card-body">
+        <% @movies.each do |movie| %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <%= link_to movie.title, movie_path(movie) %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
   </div>
+
+
   <div class="col-8">
 
     <div class="list-group">
