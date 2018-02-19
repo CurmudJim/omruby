@@ -5,22 +5,30 @@
 
   <div class="card-body">
     <h5 class="card-title">Nominations:</h5>
-    <ul class="list-group list-group-flush">
-      <% @nominations.each do |nomination| %>
-        <li class="list-group-item">
-          <%= link_to nomination.name, nomination_path(nomination) %>
-        </li>
-      <% end %>
-    </ul>
+    <% @nominations.each do |nomination| %>
+      <ul class="list-group list-group-flush">
+        <%= link_to nomination_path(nomination) do %>
+          <li class="list-group-item">
+            <%= nomination.name %>
+          </li>
+          <% end %>
+      </ul>
+    <% end %>
   </div>
 
-  <div class="card-footer btn-group">
-    <%= link_to nominations_path do %>
-      <i class="fa fa-trophy btn"></i>
-    <% end %>
-
-    <%= link_to movies_path do %>
-      <i class="fa fa-film btn"></i>
-    <% end %>
+  <div class="card-footer">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-light" disabled>Back to:</button>
+      <button type="button" class="btn btn-light" >
+        <%= link_to nominations_path do %>
+          <i class="fa fa-trophy"></i>
+        <% end %>
+      </button>
+      <button type="button" class="btn btn-light">
+        <%= link_to movies_path do %>
+          <i class="fa fa-film"></i>
+        <% end %>
+      </button>
+    </div>
   </div>
 </div>
