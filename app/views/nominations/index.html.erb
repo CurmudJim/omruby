@@ -1,9 +1,21 @@
-<h1>Nomination</h1>
+<div class="card">
+  <div class="card-header">
+    <h1>Nominations</h1>
+  </div>
 
-<ul id="nominations">
-  <% @nominations.each do |nomination| %>
-    <li>
-      <%= link_to nomination.name, nomination_path(nomination) %>
-    </li>
-  <% end %>
-</ul>
+  <div class="card-body">
+    <ul id="nominations" class="list-group list-group-flush">
+      <% @nominations.each do |nomination| %>
+        <li class="list-group-item">
+          <%= link_to nomination.name, nomination_path(nomination) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="card-footer btn-group">
+    <%= link_to movies_path do %>
+      <i class="fa fa-film btn"></i>
+    <% end %>
+  </div>
+</div>

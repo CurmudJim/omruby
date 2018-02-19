@@ -1,8 +1,25 @@
-<h1>Movies Nominated for <%= @nomination.name %></h1>
-<ul>
-  <% @movies.each do |movie| %>
-    <li>
-      <%= link_to movie.title, movie_path(movie) %>
-    </li>
-  <% end %>
-</ul>
+<div class="card">
+  <div class="card-header">
+    <h1>Movies Nominated for <%= @nomination.name %></h1>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <% @movies.each do |movie| %>
+        <li class="list-group-item">
+          <%= link_to movie.title, movie_path(movie) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="card-footer btn-group">
+    <%= link_to nominations_path do %>
+      <i class="fa fa-trophy btn"></i>
+    <% end %>
+
+    <%= link_to movies_path do %>
+      <i class="fa fa-film btn"></i>
+    <% end %>
+  </div>
+</div>
