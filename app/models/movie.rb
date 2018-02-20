@@ -15,4 +15,5 @@ class Movie < ApplicationRecord
   end
 
   acts_as_votable
+  acts_as_commentable
 end

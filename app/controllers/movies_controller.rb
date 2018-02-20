@@ -2,8 +2,8 @@ class MoviesController < ApplicationController
   include MoviesHelper
 
   def index
-    @movies = Movie.all.order("title ASC").sort_by { |x,y| x.nominations.length }.reverse
-    @users = User.all.sort_by { |x,y| (x.get_up_voted Movie).length }.reverse
+    @movies = Movie.all.order("title DESC").sort_by { |x,y| x.nominations.length }.reverse
+    @users = User.all.order("name DESC").sort_by { |x,y| (x.get_up_voted Movie).length }.reverse
   end
 
   def show

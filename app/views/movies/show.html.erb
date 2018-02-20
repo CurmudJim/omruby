@@ -6,13 +6,11 @@
   <div class="card-body">
     <h5 class="card-title">Nominations:</h5>
     <% @nominations.each do |nomination| %>
-      <ul class="list-group list-group-flush">
-        <%= link_to nomination_path(nomination) do %>
-          <li class="list-group-item">
-            <%= nomination.name %>
-          </li>
-          <% end %>
-      </ul>
+      <%= link_to nomination_path(nomination) do %>
+        <span class="badge badge-dark nomination-badge">
+          <%= nomination.name %>
+        </span>
+      <% end %>
     <% end %>
   </div>
 

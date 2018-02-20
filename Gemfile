@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'acts_as_commentable'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
 gem "font-awesome-rails"
