@@ -7,7 +7,7 @@
     <h5 class="card-title">Nominations:</h5>
     <% @nominations.each do |nomination| %>
       <%= link_to nomination_path(nomination) do %>
-        <span class="badge badge-dark nomination-badge">
+        <span class="badge badge-dark name-badge">
           <%= nomination.name %>
         </span>
       <% end %>

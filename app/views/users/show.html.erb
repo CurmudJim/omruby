@@ -15,17 +15,27 @@
         <% end %>
       <% end %>
     </div>
+
+
+    <div class="card-body">
+      <h5 class="card-title">Nominations:</h5>
+      <% @nominations.each do |nomination| %>
+        <%= link_to nomination_path(nomination) do %>
+
+      <% end %>
+    </div>
+
     <div id="oscarWatch" class="card">
       <div class="card-header">
         <h5 class="card-title">Oscar Watch</h5>
       </div>
       <div class="card-body">
         <% @movies.each do |movie| %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <%= link_to movie.title, movie_path(movie) %>
-          </li>
-        </ul>
+          <%= link_to movie_path(movie) do %>
+            <span class="badge badge-dark name-badge">
+              <%= movie.title %>
+            </span>
+          <% end %>
         <% end %>
       </div>
     </div>
