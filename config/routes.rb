@@ -34,6 +34,16 @@ Rails.application.routes.draw do
       delete 'unwatched', to: 'watches#destroy'
     end
   end
+
+  resources :comments do
+    member do
+      post 'comments', to: 'comments#create', as: "create"
+      delete 'uncomment', to: 'comments#destroy', as: "delete"
+    end
+  end
+
+
+
   resources :nominations
 
 

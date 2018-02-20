@@ -18,12 +18,12 @@
   <div class="card-footer">
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-light" disabled>Back to:</button>
-      <button type="button" class="btn btn-light" >
+      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Nominations">
         <%= link_to nominations_path do %>
           <i class="fa fa-trophy"></i>
         <% end %>
       </button>
-      <button type="button" class="btn btn-light">
+      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Films">
         <%= link_to movies_path do %>
           <i class="fa fa-film"></i>
         <% end %>

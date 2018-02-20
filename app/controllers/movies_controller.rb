@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find_by(id: params[:id])
     @nominations = @movie.nominations.order('name ASC')
   end
 
@@ -25,4 +25,5 @@ class MoviesController < ApplicationController
   def nomination_list
     nominations.join(", ")
   end
+
 end

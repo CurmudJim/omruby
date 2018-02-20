@@ -13,20 +13,52 @@
       <% end %>
     <% end %>
   </div>
-
+  <% if user_signed_in? %>
+    <div class="card-body">
+      <%= form_tag create_comment_path, method: :post do %>
+        <%= hidden_field_tag "id", @movie.id %>
+        <%= label_tag 'comment:' %>
+        <%= text_area_tag :comment, nil, class: 'form-control' %>
+        <br>
+        <%= submit_tag "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="card-body">
+    <h6>Comments:</h6>
+    <ul class="list-group list-group-flush">
+      <% @movie.comments.all.each do |comment| %>
+        <li class="list-group-item">
+          <%= link_to user_path(comment.user.username) do %>
+            <%= comment.user.username %>
+          <% end %>
+          <br>
+          <%= comment.comment %>
+          <% if comment.user == current_user %>
+            <%= link_to delete_comment_path(@movie,comment), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn float-right" do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
   <div class="card-footer">
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-light" disabled>Back to:</button>
-      <button type="button" class="btn btn-light" >
+      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Nominations">
         <%= link_to nominations_path do %>
           <i class="fa fa-trophy"></i>
         <% end %>
       </button>
-      <button type="button" class="btn btn-light">
+      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Films">
         <%= link_to movies_path do %>
           <i class="fa fa-film"></i>
         <% end %>
       </button>
     </div>
   </div>
+
+
+
 </div>
