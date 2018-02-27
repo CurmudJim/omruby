@@ -58,6 +58,13 @@ a:link {
   text-decoration: none;
 }
 
+.nominations_link {
+  color: var(--bright-yarrow);
+}
+.nominations_link:hover {
+  color: var(--sour-lemon);
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0;
   color: var(--sour-lemon);

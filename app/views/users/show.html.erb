@@ -24,13 +24,13 @@
             <% end %>
 
             <%= link_to movies_path do %>
-              <i class="fa fa-film" data-toggle="tooltip" data-placement="bottom" title="Nominations"></i>
+              <i class="fa fa-film" data-toggle="tooltip" data-placement="bottom" title="Movies"></i>
             <% end %>
           </span>
         </h5>
 
       </div>
-      <div class="card-body">
+      <div class="list-group-flush">
         <% @movies.each do |movie| %>
           <%= link_to movie_path(movie), class: "list-group-item list-group-item-action" do %>
             <%= movie.title %>

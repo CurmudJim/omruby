@@ -4,21 +4,21 @@
   </div>
 
   <div class="card-body">
-    <% @nominations.each do |nomination| %>
-      <ul id="nominations" class="list-group list-group-flush">
+    <ul id="nominations" class="list-group list-group-flush">
+      <% @nominations.each do |nomination| %>
         <%= link_to nomination_path(nomination) do %>
           <li class="list-group-item list-group-item-action">
             <%= nomination.name %>
           </li>
-          <% end %>
-      </ul>
-    <% end %>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 
   <div class="card-footer">
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-dark" disabled>Back to:</button>
-      <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Films">
+      <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Movies">
         <%= link_to movies_path do %>
             <i class="fa fa-film"></i>
         <% end %>

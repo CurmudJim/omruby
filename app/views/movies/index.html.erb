@@ -18,7 +18,11 @@
           <h5>Title</h5>
         </div>
         <div class="col-4">
-          <h5>Nominations</h5>
+          <h5>
+            <%= link_to nominations_path, class:"nominations_link" do %>
+              Nominations
+            <% end %>
+          </h5>
         </div>
         <div class="col-4">
           <h5>Watched (
