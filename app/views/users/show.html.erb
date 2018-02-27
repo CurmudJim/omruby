@@ -2,7 +2,7 @@
 <p></p>
 <div class="row">
   <div class="col-4">
-    <div class="card">
+    <div class="card bg-dark">
       <div class="card-body">
         <h5 class="card-title"><%= @user.username %></h5>
         <p class="card-text"><%= @user.name %></p>
@@ -22,7 +22,7 @@
       </div>
       <div class="card-body">
         <% @movies.each do |movie| %>
-          <%= link_to movie_path(movie), class: "list-group-item list-group-item-action list-group-item-secondary" do %>
+          <%= link_to movie_path(movie), class: "list-group-item list-group-item-action" do %>
             <%= movie.title %>
           <% end %>
         <% end %>
