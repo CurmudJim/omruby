@@ -4,4 +4,5 @@ class UsersController < ApplicationController
     @tweets = @user.tweets
     @movies = (@user.get_up_voted Movie).order('title ASC')
   end
+
 end

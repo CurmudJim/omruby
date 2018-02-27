@@ -3,6 +3,65 @@
 @import "signin_and_signup";
 @import "font-awesome";
 
+
+// Website theme
+
+:root {
+  --american-river: #636e72;
+  --bright-yarrow: #fdcb6e;
+  --chi-gong: #d63031;
+  --city-lights: #dfe6e9;
+  --dracula-orchid: #2d3436;
+  --electron-blue: #0984e3;
+  --green-darner-tail: #74b9ff;
+  --sour-lemon: #ffeaa7;
+}
+
+body {
+  background: var(--city-lights);
+  color: var(--american-river);
+}
+
+.bg-dark, .btn-dark {
+  background: var(--dracula-orchid) !important;
+}
+
+.navbar-dark .navbar-brand {
+  color: var(--bright-yarrow);
+}
+
+.navbar-dark .navbar-brand:hover {
+  color: var(--sour-lemon);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--sour-lemon);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--bright-yarrow);
+}
+
+a {
+  color: var(--green-darner-tail);
+}
+
+a:hover {
+  color: var(--electron-blue);
+}
+a:link {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0;
+  color: var(--sour-lemon);
+}
+
+.fa {
+  color: var(--electron-blue);
+}
+
 main {
   padding: 1rem 0;
 }
@@ -21,10 +80,32 @@ td,th {
   margin: 2px;
 }
 
+
+
 .unvote {
-  color: rgba(225,100,100,.25)
+  color: var(--chi-gong);
 }
 
 .vote {
-  color: rgba(100,100,225,1)
+  color: var(--electron-blue);
+}
+
+
+.card-title, h5 {
+  margin-bottom: 0;
+}
+
+
+// Lists
+.list-group-item {
+  background-color: var(--dracula-orchid);
+  color: var(--city-lights);
+}
+.list-group-item-action {
+  width: auto;
+}
+
+.list-group-item-action:hover {
+  background-color: var(--american-river);
+  color: var(--bright-yarrow)
 }

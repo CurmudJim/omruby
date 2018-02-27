@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card bg-dark">
   <div class="card-header">
     <h1>Movies Nominated for <%= @nomination.name %></h1>
   </div>
@@ -7,7 +7,7 @@
     <% @movies.each do |movie| %>
       <ul class="list-group list-group-flush">
           <%= link_to movie_path(movie) do %>
-            <li class="list-group-item">
+            <li class="list-group-item list-group-item-action">
               <%= movie.title %>
             </li>
           <% end %>
@@ -17,15 +17,15 @@
 
   <div class="card-footer">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-light" disabled>Back to:</button>
-      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Nominations">
+      <button type="button" class="btn btn-dark" disabled>Back to:</button>
+      <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Nominations">
         <%= link_to nominations_path do %>
-          <i class="fa fa-trophy"></i>
+            <i class="fa fa-trophy"></i>
         <% end %>
       </button>
-      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Films">
+      <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Films">
         <%= link_to movies_path do %>
-          <i class="fa fa-film"></i>
+            <i class="fa fa-film"></i>
         <% end %>
       </button>
     </div>

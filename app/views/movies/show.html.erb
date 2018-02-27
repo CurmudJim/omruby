@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card bg-dark">
   <div class="card-header">
     <h1><%= @movie.title %></h1>
   </div>
@@ -7,7 +7,7 @@
     <h5 class="card-title">Nominations:</h5>
     <% @nominations.each do |nomination| %>
       <%= link_to nomination_path(nomination) do %>
-        <span class="badge badge-dark name-badge">
+        <span class="badge badge-light name-badge">
           <%= nomination.name %>
         </span>
       <% end %>
@@ -45,17 +45,19 @@
   </div>
   <div class="card-footer">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-light" disabled>Back to:</button>
-      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Nominations">
+      <button type="button" class="btn btn-dark" disabled>Back to:</button>
+      <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Nominations">
         <%= link_to nominations_path do %>
-          <i class="fa fa-trophy"></i>
+            <i class="fa fa-trophy"></i>
         <% end %>
       </button>
-      <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="bottom" title="Films">
-        <%= link_to movies_path do %>
+      <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Films">
+
+      <%= link_to movies_path do %>
           <i class="fa fa-film"></i>
-        <% end %>
-      </button>
+      <% end %>
+    </button>
+
     </div>
   </div>
 

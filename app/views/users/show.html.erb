@@ -16,16 +16,14 @@
       <% end %>
     </div>
 
-    <div id="oscarWatch" class="card">
+    <div id="oscarWatch" class="card text-white bg-secondary">
       <div class="card-header">
         <h5 class="card-title">Oscar Watch</h5>
       </div>
       <div class="card-body">
         <% @movies.each do |movie| %>
-          <%= link_to movie_path(movie) do %>
-            <span class="badge badge-dark name-badge">
-              <%= movie.title %>
-            </span>
+          <%= link_to movie_path(movie), class: "list-group-item list-group-item-action list-group-item-secondary" do %>
+            <%= movie.title %>
           <% end %>
         <% end %>
       </div>
