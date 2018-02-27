@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="row">
     <div class="col-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card bg-dark" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"><%= link_to current_user.username, user_path(current_user.username) %></h5>
           <p class="card-text"><%= current_user.name %></p>

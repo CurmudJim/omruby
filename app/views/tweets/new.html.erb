@@ -1,6 +1,11 @@
-
-  <h1>New Tweet</h1>
-
-  <%= render 'form', tweet: @tweet %>
-
-  <%= link_to 'Back', tweets_path %>
+<div class="card bg-dark">
+  <div class="card-header">
+    <h1>New Tweet</h1>
+  </div>
+  <div class="card-body">
+    <%= render 'form', tweet: @tweet %>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Back', tweets_path %>
+  </div>
+</div>
