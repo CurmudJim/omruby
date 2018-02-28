@@ -4,15 +4,15 @@
   </div>
 
   <div class="card-body">
-    <% @movies.each do |movie| %>
-      <ul class="list-group list-group-flush">
-          <%= link_to movie_path(movie) do %>
-            <li class="list-group-item list-group-item-action">
-              <%= movie.title %>
-            </li>
-          <% end %>
-      </ul>
-    <% end %>
+    <ul class="list-group list-group-flush">
+      <% @movies.each do |movie| %>
+        <%= link_to movie_path(movie) do %>
+          <li class="list-group-item list-group-item-action">
+            <%= movie.title %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 
   <div class="card-footer">
